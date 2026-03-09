@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>la3 q3</title>
+
+    <script>
+        function generateEmail(btn)
+        {
+            var fname = btn.form.elements["fname"].value;
+            var lname = btn.form.elements["lname"].value;
+
+            var email = fname + "." + lname + "@park.edu";
+
+            document.getElementById("result").innerHTML = "Generated Email: " + email;
+
+            btn.form.reset();
+
+            btn.form.elements["fname"].focus();
+        }
+    </script>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Email Address Generator</h2>
+
+<form>
+    First Name: <input type="text" name="fname"><br><br>
+    Last Name: <input type="text" name="lname"><br><br>
+
+    <button type="button" onclick="generateEmail(this)">Generate Email</button>
+</form>
+
+<br>
+<p id="result"></p>
+
+</body>
+</html>
