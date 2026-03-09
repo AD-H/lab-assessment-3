@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La3 q4</title>
+
+    <script>
+        function calculateArea()
+        {
+            // Integer values
+            var lengthValue = 10;
+            var widthValue = 5;
+
+            var areaInt = lengthValue * widthValue;
+
+            // Floating point values
+            lengthValue = 10.5;
+            widthValue = 5.2;
+
+            var areaFloat = lengthValue * widthValue;
+
+            document.getElementById("result").innerHTML =
+                "Area with integers: " + areaInt + "<br>" +
+                "Area with floating numbers: " + areaFloat;
+        }
+    </script>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Rectangle Area Calculator</h2>
+
+<button onclick="calculateArea()">Calculate Area</button>
+
+<p id="result"></p>
+
+</body>
+</html>
