@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>la3 q9</title>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Select a Color</h2>
+
+<!-- Radio buttons with same name attribute to form a group -->
+<input type="radio" name="color" value="Red"> Red <br>
+<input type="radio" name="color" value="Green"> Green <br>
+<input type="radio" name="color" value="Blue"> Blue <br><br>
+
+<!-- Button to trigger JavaScript function -->
+<button onclick="showColor()">Show Selected Color</button>
+
+<!-- Paragraph to display result -->
+<p id="result"></p>
+
+<script>
+
+function showColor() {
+
+    // Access all radio buttons with name "color"
+    let colors = document.getElementsByName("color");
+
+    // Loop through all radio buttons
+    for (let i = 0; i < colors.length; i++) {
+
+        // Check which radio button is selected
+        if (colors[i].checked) {
+
+            // Display selected color in paragraph element
+            document.getElementById("result").innerHTML =
+                "Selected Color: " + colors[i].value;
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
