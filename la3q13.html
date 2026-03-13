@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>la3 q13</title>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Product Order Form</h2>
+
+<form>
+
+<!-- Fieldset for Electronics -->
+<fieldset>
+<legend>Electronics</legend>
+
+<input type="checkbox" class="item" value="500"> Headphones ($500) <br>
+<input type="checkbox" class="item" value="1200"> Keyboard ($1200) <br>
+
+</fieldset>
+<br>
+
+<!-- Fieldset for Accessories -->
+<fieldset>
+<legend>Accessories</legend>
+
+<input type="checkbox" class="item" value="300"> Mouse ($300) <br>
+<input type="checkbox" class="item" value="150"> USB Cable ($150) <br>
+
+</fieldset>
+<br>
+
+<!-- Fieldset for Software -->
+<fieldset>
+<legend>Software</legend>
+
+<input type="checkbox" class="item" value="800"> Antivirus ($800) <br>
+<input type="checkbox" class="item" value="600"> Office Suite ($600) <br>
+
+</fieldset>
+<br>
+
+<!-- Button to calculate total price -->
+<button type="button" onclick="calculateTotal()">Calculate Total</button>
+
+<p id="result"></p>
+
+</form>
+
+<script>
+
+function calculateTotal(){
+
+    // Select all product items
+    let items = document.querySelectorAll(".item");
+
+    let total = 0;
+
+    // Modern for...of loop
+    for(let item of items){
+
+        // Check if item is selected
+        if(item.checked){
+
+            // Convert value to number using parseFloat
+            total += parseFloat(item.value);
+        }
+    }
+
+    // Display total price
+    document.getElementById("result").innerHTML =
+    "Total Price: $" + total;
+
+}
+
+</script>
+
+</body>
+</html>
