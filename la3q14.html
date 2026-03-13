@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>la3 q14</title>
+
+    <style>
+        /* Predefined CSS classes */
+        .italic {
+            font-style: italic;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .smallcaps {
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Text Styling Application</h2>
+
+<form>
+
+<!-- Fieldset for message -->
+<fieldset>
+<legend>Message</legend>
+<textarea id="message" rows="4" cols="50">Type your message here...</textarea>
+</fieldset>
+<br>
+
+<!-- Fieldset for styling buttons -->
+<fieldset>
+<legend>Text Styles</legend>
+
+<button type="button" onclick="applyStyle('italic')">Italic</button>
+<button type="button" onclick="applyStyle('bold')">Bold</button>
+<button type="button" onclick="applyStyle('smallcaps')">Small-Caps</button>
+
+</fieldset>
+
+</form>
+
+<p id="styledMessage">Your styled message will appear here.</p>
+
+<script>
+function applyStyle(styleClass) {
+    // Get the message text
+    let message = document.getElementById("message").value;
+
+    // Display message in paragraph
+    let para = document.getElementById("styledMessage");
+    para.innerHTML = message;
+
+    // Apply the selected style using className
+    para.className = styleClass;
+}
+</script>
+
+</body>
+</html>
