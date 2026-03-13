@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>la3 q16</title>
+    <style>
+        /* Container for images */
+        #gallery {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+
+        /* Images are absolutely positioned to overlap */
+        #gallery img {
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            cursor: pointer;
+            border: 2px solid #000;
+            transition: transform 0.2s;
+        }
+
+        /* Slight scaling on hover */
+        #gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Overlapping Image Gallery</h2>
+
+<div id="gallery">
+    <img src="w1.jpg" style="top: 20px; left: 20px;" onclick="bringToFront(this)">
+    <img src="w2.jpg" style="top: 50px; left: 80px;" onclick="bringToFront(this)">
+    <img src="w3.jpg" style="top: 100px; left: 140px;" onclick="bringToFront(this)">
+</div>
+
+<script>
+// Global variable to track the top z-index
+let topZ = 1;
+
+function bringToFront(img) {
+    // Increment topZ and assign to clicked image
+    img.style.zIndex = ++topZ;
+}
+</script>
+
+</body>
+</html>
