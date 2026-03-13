@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>la3 q10</title>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Select Subjects</h2>
+
+<!-- Checkboxes for subjects -->
+<input type="checkbox" name="subject" value="Math"> Math <br>
+<input type="checkbox" name="subject" value="Physics"> Physics <br>
+<input type="checkbox" name="subject" value="Chemistry"> Chemistry <br>
+<input type="checkbox" name="subject" value="Biology"> Biology <br><br>
+
+<!-- Button to check selected subjects -->
+<button onclick="checkSubjects()">Show Selection</button>
+
+<!-- Paragraph to display result -->
+<p id="result"></p>
+
+<script>
+
+function checkSubjects() {
+
+    // Access all checkbox elements
+    let subjects = document.getElementsByName("subject");
+
+    let selected = [];   // array to store selected values
+    let count = 0;       // counter variable
+
+    // Loop through all checkboxes
+    for (let i = 0; i < subjects.length; i++) {
+
+        // Check if checkbox is selected
+        if (subjects[i].checked) {
+
+            count++;  // increase counter
+
+            // Add selected subject to array
+            selected.push(subjects[i].value);
+        }
+    }
+
+    // Display count and selected subjects
+    document.getElementById("result").innerHTML =
+        "Selected Subjects: " + selected.join(", ") +
+        "<br>Total Selected: " + count;
+}
+
+</script>
+
+</body>
+</html>
