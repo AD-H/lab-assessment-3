@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>la3 q12</title>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Select Your Skills</h2>
+
+<form id="skillForm">
+
+<!-- Skill checkboxes -->
+<input type="checkbox" name="skill" value="Java"> Java <br>
+<input type="checkbox" name="skill" value="Python"> Python <br>
+<input type="checkbox" name="skill" value="C++"> C++ <br>
+<input type="checkbox" name="skill" value="JavaScript"> JavaScript <br>
+<input type="checkbox" name="skill" value="SQL"> SQL <br><br>
+
+<!-- Button to validate selection -->
+<button type="button" onclick="validateSkills()">Submit</button>
+
+</form>
+
+<p id="result"></p>
+
+<script>
+
+function validateSkills(){
+
+    // Access all skill checkboxes
+    let skills = document.getElementsByName("skill");
+
+    let selectedSkills = []; // array to store selected values
+
+    // for loop with index
+    for(let i = 0; i < skills.length; i++){
+
+        // check if checkbox is selected
+        if(skills[i].checked){
+            selectedSkills.push(skills[i].value);
+        }
+    }
+
+    // validate minimum 3 skills
+    if(selectedSkills.length < 3){
+
+        document.getElementById("result").innerHTML =
+        "Error: Please select at least 3 skills.";
+
+    }
+    else{
+
+        document.getElementById("result").innerHTML =
+        "Selected Skills: " + selectedSkills.join(", ");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
