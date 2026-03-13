@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>la3 q7</title>
+</head>
+
+<body>
+<h2>Aachman Dwivedi 24BCI0207</h2>
+<h2>Print Numbers from 1 to N</h2>
+
+Enter N: 
+<input type="number" id="num">
+
+<button onclick="printNumbers()">Print</button>
+
+<p id="result"></p>
+
+<script>
+function printNumbers() {
+    let n = document.getElementById("num").value;
+    let i = 1;                 // counter initialization
+    let output = "";
+
+    while (i <= n) {           // condition checking
+        output = output + i + " ";
+        i++;                   // increment
+    }
+
+    document.getElementById("result").innerHTML = output; // display output
+}
+</script>
+
+</body>
+</html>
