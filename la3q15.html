@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>la3 q15</title>
+</head>
+
+<body>
+<h2>Aachman Dwivedi, 24BCI0207</h2>
+<h2>Dynamic Font Customization Tool</h2>
+
+<form>
+
+<!-- Fieldset for message -->
+<fieldset>
+<legend>Message</legend>
+<textarea id="message" rows="4" cols="50">Customize this text...</textarea>
+</fieldset>
+<br>
+
+<!-- Fieldset for font size -->
+<fieldset>
+<legend>Font Size</legend>
+<input type="range" id="fontSize" min="10" max="50" value="16" oninput="updateFont()"> 
+<span id="sizeValue">16px</span>
+</fieldset>
+<br>
+
+<!-- Fieldset for text color -->
+<fieldset>
+<legend>Text Color</legend>
+<input type="color" id="textColor" value="#000000" onchange="updateFont()">
+</fieldset>
+<br>
+
+<!-- Fieldset for background color -->
+<fieldset>
+<legend>Background Color</legend>
+<input type="color" id="bgColor" value="#ffffff" onchange="updateFont()">
+</fieldset>
+<br>
+
+</form>
+
+<!-- Paragraph to show customized text -->
+<p id="styledMessage">Your customized text will appear here.</p>
+
+<script>
+function updateFont() {
+    let message = document.getElementById("message").value;
+    let para = document.getElementById("styledMessage");
+
+    // Update message text
+    para.innerHTML = message;
+
+    // Get values from inputs
+    let size = document.getElementById("fontSize").value;
+    let color = document.getElementById("textColor").value;
+    let bg = document.getElementById("bgColor").value;
+
+    // Update font size display
+    document.getElementById("sizeValue").innerHTML = size + "px";
+
+    // Apply styles dynamically using style property
+    para.style.fontSize = size + "px";
+    para.style.color = color;
+    para.style.backgroundColor = bg;
+}
+</script>
+
+</body>
+</html>
